@@ -20,7 +20,7 @@ async def welcome_message():
 
 # Warning: This only for testing purpose only. Do not do this on production
 @app.get('/calculate/{function}')
-async def calculate(function: AvailableFunction, parameter: Optional[float]=0):
+async def calculate(function: AvailableFunction, parameter: Optional[float]=0) -> Calculation:
     if function == AvailableFunction.sin:
         return Calculation(result=math.sin(parameter))
     elif function == AvailableFunction.cos:
